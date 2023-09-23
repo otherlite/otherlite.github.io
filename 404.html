@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script>
+      var writeUrl = (url) => {
+        fetch(url)
+          .then((res) => res.text())
+          .then((content) => {
+            document.write(content);
+          });
+      };
+
+      var bootstrap = () => {
+        if (location.pathname.startsWith("/blog")) {
+          writeUrl("/blog");
+        }
+      };
+
+      bootstrap();
+    </script>
+  </head>
+</html>
